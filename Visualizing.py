@@ -29,7 +29,7 @@ patches, texts, autotexts = ax.pie(total, labels=tickers, autopct='%1.1f%%', pct
 [text.set_color('white') for text in texts]
 
 my_circle = plt.Circle((0, 0), 0.55, color='black')
-plt.gca().add_artist(my_circle)
+plt.gca().add_artist(my_circle) 
 ax.text(-2,1, 'PORTFOLIO OVERVIEW:', fontsize=14, color="#ffe536", horizontalalignment='center', verticalalignment='center')
 ax.text(-2,0.85, f'Total USD Amount: {sum(total):.2f} $', fontsize=12, color="white", horizontalalignment='center', verticalalignment='center')
 counter = 0.15
