@@ -1,22 +1,25 @@
-from yahoofinancials import YahooFinancials 
+from yahoofinancials import YahooFinancials
 import time
+Shortname = input('Wie lautet das Symbol? \n')
 
-def AktienAbfrage():
-    Shortname = input('Wie lautet das Symbol? \n')
 
+
+def aktien_abfrage():
     for i in range(0,1000):
         i = i+1
         DatenDerAktie = YahooFinancials(Shortname)
         PreisDerAktie = DatenDerAktie.get_current_price()
-        Dollarzeichen = str('$')
-        print(str(PreisDerAktie) + " " + Dollarzeichen +" "+ time.asctime()+" New York")                
-
-        """
-        if PreisDerAktie > 114.0 : 
-            print("Apple's Aktie hat 114$ überschritten")
-        else:
-         print("Apple's Aktie hat 114$ unterschritten")
-        """    
+        WaehrungAktie = DatenDerAktie.get_currency()
+        print(str(PreisDerAktie) +' '+ WaehrungAktie  +" "+ time.asctime()+" New York")
         time.sleep(5)
 
-AktienAbfrage()
+def prozent_unterschied():
+        for i in range(0,1000):
+            i = i+1
+            DatenDerAktie = YahooFinancials(Shortname)
+            Prozentuale_Veraenderung = DatenDerAktie.get_current_percent_change()
+            Prozentzeichen = str('%')
+            print(str(Prozentuale_Veraenderung) + " " + Prozentzeichen +" "+ time.asctime())
+            time.sleep(5)
+
+aktien_abfrage()
