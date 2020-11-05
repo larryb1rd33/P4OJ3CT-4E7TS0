@@ -5,7 +5,6 @@ import numpy as np
 
 #%matpolotlib inline
 
-"""
 start = datetime.datetime(2020,1,1)
 end = datetime.datetime(2020,11,5)
 
@@ -27,7 +26,7 @@ plt.ylabel('Stock Price in Dollar')
 #google['Volume'].plot(figsize=(17,5))
 
 plt.show()
-"""
+
 
 start = datetime.datetime(2010,1,1)
 end = datetime.datetime(2020,11,5)
